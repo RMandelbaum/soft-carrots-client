@@ -6,7 +6,7 @@ import Jokes from './Jokes';
 
 import './App.css';
 
-
+const API_URL = process.env.REACT_APP_API_URL;
 
 class App extends Component {
 
@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3001/api/jokes')
+    fetch(`${API_URL}/jokes`)
       .then(response => response.json())
       .then(jokes => this.setState({ jokes }))
   }
