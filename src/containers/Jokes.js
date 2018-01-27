@@ -1,26 +1,33 @@
-import React from 'react';
-import './Jokes.css'
-//import { getJokes } from '../actions/jokes';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import JokeCard from '../components/JokeCard';
+import { getJokes } from '../actions/jokes';
+import { Link } from 'react-router-dom';
+import './Jokes.css';
 
-const Jokes = (props) => {
+class Jokes extends Component{
 
-  // componentDidMount(){
-  //   this.props.getJokes()
-  // }
-  return(
-      <div className="JokesContainer">
-        <h1>Jokes</h1>
-        {props.jokes.map(joke =>
-          <div key={joke.id} className="JokeCard">
-            <h3>''{joke.description}''</h3>
-            <p>Submitted By: {joke.author}</p>
-            <p>Category: {joke.category}</p>
-            <img className="JokeImage" src={joke.img_url} alt="Ahh No Funny Pic :(" />
-            <p>Rating: {joke.rating}</p>
-          </div>
-        )}
-      </div>
-  )
+  componentDidMount(){
+    this.props.getJokes()
   }
 
-export default Jokes;
+  render(){
+    return(
+        <div className="JokesContainer">
+          <Link to="/jokes/new" className="add" exact >Add a joke</Link>
+          <h1>Jokes</h1>
+          {this.props.jokes.map(joke => <JokeCard key={joke.id} joke={joke} />)}
+        </div>
+
+
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return({
+    jokes: state.jokes
+  })
+}
+
+export default connect(mapStateToProps, { getJokes })(Jokes);
