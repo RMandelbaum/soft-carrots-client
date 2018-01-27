@@ -1,0 +1,89 @@
+.App {
+  text-align: center;
+  padding-bottom: 10px;
+  background-image: url("https://image.shutterstock.com/z/stock-vector-cute-space-seamless-pattern-funny-background-for-kids-who-love-outer-space-and-adventure-342356993.jpg");
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.HomeContainer{
+  margin: auto;
+  padding-top: 10px;
+  text-align: center;
+}
+
+
+.HomeContainer h2{
+  margin-top: 5%;
+  color: green;
+}
+
+.HomeContainer a, .add{
+  display: inline-block;
+  margin-top: 5%;
+  padding: 10px;
+  border: solid 3px;
+}
+
+.HomeContainer a:hover, .add:hover{
+  text-decoration: none;
+}
+
+.AboutContainer{
+  display: inline-block;
+  margin-left: 33%;
+  margin-right: 33%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  padding: 75px;
+  padding: 50px;
+  padding-top: 20px;
+  background-color: black;
+
+}
+
+.AboutContainer p{
+  color: white;
+  font-size: 20px;
+}
+.fieldRequired {
+  color: red;
+}
+
+.PageContent{
+  background-color: #fffafa;
+  width: 50%;
+  margin: auto;
+  text-align: left;
+  padding-left: 15px;
+ }
+
+ .FormHeader{
+   margin:auto;
+   text-align: center;
+
+ }

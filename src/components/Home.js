@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return(
         <div className="HomeContainer">
-            <h1>Home Content</h1>
-            <h2>Home Content</h2>
-            <Link to="/about" exact >Learn More</Link>
+          <div className="PageContent">
+            <h2>Create and view jokes</h2>
+            <Link to="/jokes" exact >Enter</Link>
+          </div>
         </div>
     )
 }

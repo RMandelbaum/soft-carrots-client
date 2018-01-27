@@ -1,26 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {Navbar as BNav, Nav, NavItem} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import '../styles/NavBar.css'
 
-
-const Navbar = () => {
-    return(
-        <BNav>
-            <BNav.Header>
-                <BNav.Brand>
-                    <Link to="/" exact >Soft Carrots-Jokes At Your Fingertips</Link>
-                </BNav.Brand>
-            </BNav.Header>
-            <Nav>
-                <NavItem>
-                    <Link to="/about" exact >ABOUT</Link>
-                </NavItem>
-                <NavItem>
-                    <Link to="/jokes" exact >Jokes</Link>
-                </NavItem>
-            </Nav>
-        </BNav>
-    )
+const NavBar = props => {
+  return (
+    <div className="navbar-container">
+      <NavLink
+      className="navbar-item"
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className="navbar-item"
+        to="/jokes"
+      >
+        Jokes
+      </NavLink>
+      <NavLink
+      className="navbar-item"
+        to="/about"
+      >
+        About
+      </NavLink>
+      <NavLink
+        className="navbar-item"
+        to="/jokes/new"
+      >
+        Submit
+      </NavLink>
+     </div>
+  );
 }
 
-export default Navbar;
+export default NavBar;

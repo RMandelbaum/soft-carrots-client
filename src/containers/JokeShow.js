@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 import { deleteJoke } from '../actions/jokes';
-
-
+import JokeInfo from '../components/JokeInfo';
+import JokeComments from '../components/JokeComments';
 class JokeShow extends Component{
 
     handleOnClick = (event,jokeID, history) =>{
@@ -16,6 +16,8 @@ class JokeShow extends Component{
         return(
             <div className="JokeShow">
               <Button onClick={(e) => this.handleOnClick(e, joke.id, history)} bsStyle="danger">Delete { joke.first_name} </Button>
+              <JokeInfo joke = {joke} />
+              <JokeComments joke= {joke} />
             </div>
         )
     }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import JokeCard from '../components/JokeCard';
 import { getJokes } from '../actions/jokes';
 import { Link } from 'react-router-dom';
-import './Jokes.css';
+import '../styles/Jokes.css';
 
 class Jokes extends Component{
 
@@ -14,7 +14,6 @@ class Jokes extends Component{
   render(){
     return(
         <div className="JokesContainer">
-          <Link to="/jokes/new" className="add" exact >Add a joke</Link>
           <h1>Jokes</h1>
           {this.props.jokes.map(joke => <JokeCard key={joke.id} joke={joke} />)}
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Jokes.css';
 
 const JokeCard = ({joke}) =>(
     <Link to={`/jokes/${joke.id}`} exact >

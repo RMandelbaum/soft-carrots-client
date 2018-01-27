@@ -1,0 +1,71 @@
+
+.TopNav{
+  background-image: url("https://image.shutterstock.com/z/stock-vector-cute-space-seamless-pattern-funny-background-for-kids-who-love-outer-space-and-adventure-342356993.jpg");
+ }
+
+.TopNav h1{
+  text-align: center;
+  font-weight: normal;
+  color: rgb(237, 145, 33);
+  text-transform: uppercase;
+  font-size: 6em;
+  white-space: nowrap;
+  font-size: 8vw;
+  z-index: 1000;
+  font-family: 'Bangers', cursive;
+  text-shadow: 5px 5px 0  rgb(0, 140, 91);
+  font-style: italic;
+}
+
+.BottomNav{
+    text-align: center;
+    padding-bottom: 40px;
+    background-image: url("https://image.shutterstock.com/z/stock-vector-cute-space-seamless-pattern-funny-background-for-kids-who-love-outer-space-and-adventure-342356993.jpg");
+
+}
+.navbar-container {
+  margin: auto;
+  display: flex;
+  list-style-type: none;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 15px;
+ }
+
+.navbar-item {
+  height: 25px;
+  float: left;
+  margin-right: 0px;
+  padding: 0 30px;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+}
+
+.navbar-item:last-child {
+  border-right: none;
+}
+
+ .navbar-item a{
+  text-decoration: none;
+  color: #ccc;
+  text-transform: uppercase;
+  font-weight: bolder;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navbar-item a:hover {
+  color:  #777;
+  text-decoration: none;
+}
+
+.navbar-item .active a {
+  font-weight: bold;
+  color: #333;
+}
