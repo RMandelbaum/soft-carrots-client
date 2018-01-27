@@ -66,3 +66,17 @@ export const createJoke = (joke, routerHistory) => {
       return error;
     });
   }
+
+  export const upvoteJoke = (jokeId) => {
+    return {
+      type: 'UPVOTE_JOKE',
+      jokeId
+    }
+  }
+
+  export const downvoteJoke = (jokeId) => {
+    return {
+      type: 'DOWNVOTE_JOKE',
+      jokeId
+     }
+   }
