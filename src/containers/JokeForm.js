@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { updateJokeFormData } from '../actions/jokesForm';
 import { createJoke } from '../actions/jokes';
-import FormError from '../components/FormError';
 
 
 class JokeForm extends Component {
@@ -23,26 +22,26 @@ class JokeForm extends Component {
       }
 
     render(){
-        const { description, author, category, rating, img_url} = this.props.jokeFormData;
+        const { description, author, category, img_url} = this.props.jokeFormData;
         return(
             <div>
                 <h3 className="FormHeader">Joke Form</h3>
-                {this.props.errors === true ? <FormError />: null}
                 <hr />
-                <form  className="PageContent" onSubmit={this.handleOnSubmit}>
+                <form className="PageContent" onSubmit={this.handleOnSubmit}>
                     <div>
-                        <label htmlFor="description">Joke Entry<span className="fieldRequired"> *</span>: </label>
+                        <label htmlFor="description">Joke Entry: </label>
                         <br />
                         <textarea
                                onChange={this.handleOnChange}
                                name='description'
                                value={description}
-                               placeholder="required" />
+                               placeholder="required"
+                          />
 
                     </div>
                     <br />
                     <div>
-                        <label htmlFor="author">Submitted By: <span className="fieldRequired"> *</span>:</label>
+                        <label htmlFor="author">Submitted By:</label>
                         <br />
                         <input type='text'
                                onChange={this.handleOnChange}
@@ -52,7 +51,7 @@ class JokeForm extends Component {
                     </div>
                     <br />
                     <div>
-                        <label htmlFor="category">Category<span className="fieldRequired"> *</span>:</label>
+                        <label htmlFor="category">Category:</label>
                         <br />
                         <select value={category} onChange={this.handleChange}>
                             <option value="irony">Irony</option>
@@ -72,7 +71,7 @@ class JokeForm extends Component {
                     </div>
                     <br />
                     <div>
-                        <label htmlFor="img_url">Image URL<span className="fieldRequired"> *</span>:</label>
+                        <label htmlFor="img_url">Image URL:</label>
                         <br />
                         <input type='text'
                                onChange={this.handleOnChange}
@@ -93,7 +92,6 @@ class JokeForm extends Component {
 const mapStateToProps = state => {
     return{
         jokeFormData: state.jokeFormData,
-        errors: state.errors
     }
 }
 

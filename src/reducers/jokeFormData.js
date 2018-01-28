@@ -1,9 +1,9 @@
 const initialState = {
-    description: null,
-    author: null,
-    category: null,
-    rating: null,
-    img_url: null
+    description: "",
+    author: "",
+    category: "",
+    rating: 0,
+    img_url: ""
   }
 
   export default (state = initialState, action) => {

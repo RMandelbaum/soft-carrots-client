@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import '../styles/NavBar.css'
+
 
 const NavBar = props => {
   return (
@@ -10,28 +10,30 @@ const NavBar = props => {
       className="navbar-item"
         to="/"
       >
-        Home
+        HOME
       </NavLink>
       <NavLink
         className="navbar-item"
         to="/jokes"
       >
-        Jokes
+        JOKES
       </NavLink>
       <NavLink
-      className="navbar-item"
-        to="/about"
-      >
-        About
-      </NavLink>
+        className="navbar-item"
+        to="/random"
+          >
+            RANDOM
+          </NavLink>
+
       <NavLink
         className="navbar-item"
         to="/jokes/new"
       >
-        Submit
+        SUBMIT
       </NavLink>
      </div>
   );
 }
+
 
 export default NavBar;

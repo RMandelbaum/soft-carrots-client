@@ -20,10 +20,11 @@ export default (state = [], action) => {
         idx = state.findIndex(joke => joke.id === action.jokeId);
         joke = state[idx];
 
-        if (joke.rating > 1)
+        if (joke.rating > 0)
         return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating -= 1}), ...state.slice(idx + 1)]
+      
 
-
+    break
     default:
         return state;
 }

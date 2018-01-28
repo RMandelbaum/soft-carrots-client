@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from '../components/NavBar';
 import Jokes from './Jokes';
 import Home from '../components/Home'
-import About from '../components/About'
-import JokeShow from './JokeShow'
+import Random from '../components/Random'
 import JokeForm from './JokeForm'
+import { Link } from 'react-router-dom';
 import '../styles/App.css';
 
 class App extends Component {
@@ -14,18 +14,14 @@ class App extends Component {
       <Router>
         <div>
           <div className="TopNav">
-            <h1>Soft Carrots</h1>
+            <h1><Link to="/">Soft Carrots</Link></h1>
           </div>
-
           <Navbar />
-          <div className="BottomNav">
-          </div>
           <Switch>
             <Route exact path = '/' component = {Home} />
-            <Route exact path = '/about' component = {About} />
+            <Route exact path = '/random' component = {Random} />
             <Route exact path = '/jokes' component = {Jokes} />
             <Route exact path = '/jokes/new' component = {JokeForm} />
-            <Route exact path = '/jokes/:id' component = {JokeShow} />
            </Switch>
         </div>
      </Router>

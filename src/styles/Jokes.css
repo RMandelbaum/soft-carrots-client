@@ -4,16 +4,16 @@
   margin: auto;
   height: 100px;
   text-align: center;
-
-
 }
 
 .JokeCard {
+  border:solid;
+  border-color:orange;
   flex: auto;
-  background: whitesmoke;
+  background: white;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  width: 50%;
+  width: 40%;
   margin: auto;
   margin-bottom: 10px;
   text-align: center;
@@ -29,4 +29,23 @@
 
 .JokeImage {
   width: 70%;
+}
+
+
+.UpVote{
+  width: 5%;
+ }
+
+.UpVote:hover {
+  width: 6%;
+  cursor:pointer;
+}
+
+.DownVote{
+  width: 5%;
+}
+
+.DownVote:hover {
+  width: 6%;
+  cursor:pointer;
 }

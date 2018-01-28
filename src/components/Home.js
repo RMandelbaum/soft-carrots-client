@@ -6,8 +6,9 @@ const Home = () => {
     return(
         <div className="HomeContainer">
           <div className="PageContent">
-            <h2>Create and view jokes</h2>
-            <Link to="/jokes" exact >Enter</Link>
+              <h3>Welcome to Soft Carrots!</h3>
+              <p>A comedy platform to view and submit jokes</p>
+              <Link to="/jokes" >ENTER</Link>
           </div>
         </div>
     )
