@@ -12,6 +12,7 @@ export const setJokes = jokes => {
 export const getJokes = () => {
     return dispatch => {
         return fetch(`${API_URL}/jokes`)
+
         .then(response => response.json())
         .then(jokes => dispatch(setJokes(jokes)))
         .catch(error => console.log(error))

@@ -8,6 +8,7 @@ class Jokes extends Component{
 
   componentDidMount(){
     this.props.getJokes()
+    debugger
   }
 
   render(){
