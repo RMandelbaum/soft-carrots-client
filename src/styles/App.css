@@ -55,3 +55,7 @@
    margin:auto;
    text-align: center;
  }
+
+ .fieldRequired {
+   color: red;
+ }

@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { updateJokeFormData } from '../actions/jokesForm';
 import { createJoke } from '../actions/jokes';
+import FormError from '../components/FormError';
 
 
 class JokeForm extends Component {
@@ -23,9 +24,11 @@ class JokeForm extends Component {
 
     render(){
         const { description, author, category, img_url} = this.props.jokeFormData;
+
         return(
             <div>
                 <h3 className="FormHeader">Joke Form</h3>
+                {this.props.errors === true ? <FormError />: null}
                 <hr />
                 <form className="PageContent" onSubmit={this.handleOnSubmit}>
                     <div>
@@ -52,8 +55,8 @@ class JokeForm extends Component {
                     <br />
                     <div>
                         <label htmlFor="category">Category:</label>
-                        <br />
-                        <select value={category} onChange={this.handleChange}>
+                          <br />
+                        <select name='category' value={category}  onChange={this.handleOnChange}>
                             <option value="irony">Irony</option>
                             <option value="character">Character</option>
                             <option value="reference">Reference</option>
@@ -67,6 +70,7 @@ class JokeForm extends Component {
                             <option value="misplaced">Misplaced</option>
                             <option value="focus">Shock</option>
                         </select>
+
 
                     </div>
                     <br />
@@ -92,6 +96,7 @@ class JokeForm extends Component {
 const mapStateToProps = state => {
     return{
         jokeFormData: state.jokeFormData,
+        errors: state.errors
     }
 }
 

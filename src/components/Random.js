@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { getJokes } from '../actions/jokes';
+import { getJokes, upvoteJoke, downvoteJoke } from '../actions/jokes';
 import { connect } from 'react-redux';
 import JokeCard from './JokeCard';
 
@@ -19,7 +18,7 @@ function shuffleArray(jokeArray){
 class Random extends Component {
 
   componentDidMount(){
-    let jokeArray = this.props.getJokes()
+    this.props.getJokes()
     }
 
   render() {
@@ -29,7 +28,7 @@ class Random extends Component {
       <ul>
         {shuffledJokes.map((joke, idx) => {
           return (
-            <JokeCard joke={joke}/>
+            <JokeCard key={idx} joke={joke} />
           );
         })}
       </ul>
@@ -41,4 +40,4 @@ const mapStateToProps = (state) => {
     jokes: state.jokes
   })
 }
-export default connect(mapStateToProps, {getJokes})(Random);
+export default connect(mapStateToProps, {getJokes, upvoteJoke, downvoteJoke})(Random);

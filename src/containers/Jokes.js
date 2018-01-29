@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import JokeCard from '../components/JokeCard';
 import { getJokes, upvoteJoke, downvoteJoke } from '../actions/jokes';
 import '../styles/Jokes.css';
+import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
 
   componentDidMount(){
     this.props.getJokes()
-    debugger
+    
   }
 
   render(){
@@ -19,6 +20,8 @@ class Jokes extends Component{
             upvoteJoke={upvoteJoke}
             downvoteJoke={downvoteJoke}
             joke={joke} />)}
+            <Pagination />
+
         </div>
 
 
