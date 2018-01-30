@@ -9,19 +9,20 @@ class Jokes extends Component{
 
   componentDidMount(){
     this.props.getJokes()
-    
-  }
 
+  }
+debugger
   render(){
       const { jokes, upvoteJoke, downvoteJoke } = this.props;
-    return(
-        <div className="JokesContainer">
-          {jokes.map(joke => <JokeCard key={joke.id}
+        debugger
+         return(
+           <div className="JokesContainer">
+             {jokes.map(joke => <JokeCard key={joke.id}
+
             upvoteJoke={upvoteJoke}
             downvoteJoke={downvoteJoke}
             joke={joke} />)}
             <Pagination />
-
         </div>
 
 

@@ -1,6 +1,6 @@
 import { resetJokeForm } from './jokesForm';
 
-const API_URL = process.env.REACT_APP_API_URL;
+const CARROT_API = process.env.REACT_APP_API_URL;
 
 export const setJokes = jokes => {
     return{
@@ -11,7 +11,7 @@ export const setJokes = jokes => {
 
 export const getJokes = () => {
     return dispatch => {
-        return fetch(`${API_URL}/jokes`)
+        return fetch(`${CARROT_API}/jokes`)
 
         .then(response => response.json())
         .then(jokes => dispatch(setJokes(jokes)))
@@ -28,7 +28,7 @@ export const removeJoke = joke => {
 
 export const createJoke = (joke, routerHistory) => {
     return dispatch => {
-      return fetch(`${API_URL}/jokes`, {
+      return fetch(`${CARROT_API}/jokes`, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -53,19 +53,6 @@ export const createJoke = (joke, routerHistory) => {
       throw Error(response.statusText);
     }
     return response;
-  }
-
-  export const deleteJoke = (jokeID, routerHistory) => {
-    const request = new Request(`${API_URL}/jokes/${jokeID}`, {
-      method: 'DELETE'
-    });
-
-    return fetch(request).then(response =>{
-      removeJoke(jokeID);
-      routerHistory.replace('/jokes');
-    }).catch(error =>{
-      return error;
-    });
   }
 
   export const upvoteJoke = (jokeId) => {

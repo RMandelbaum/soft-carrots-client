@@ -22,8 +22,9 @@ export default (state = [], action) => {
 
         if (joke.rating > 0)
         return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating -= 1}), ...state.slice(idx + 1)]
-      
-
+        else{
+          return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating = 0}), ...state.slice(idx + 1)]
+        }
     break
     default:
         return state;
