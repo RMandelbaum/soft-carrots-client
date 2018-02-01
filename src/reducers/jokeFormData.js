@@ -10,7 +10,7 @@ const initialState = {
     switch (action.type) {
       case 'UPDATED_JOKE':
         return action.jokeFormData
-
+        debugger
       case 'RESET_JOKE_FORM':
         return initialState;
 

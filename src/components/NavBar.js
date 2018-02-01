@@ -13,6 +13,12 @@ const NavBar = props => {
         HOME
       </NavLink>
       <NavLink
+      className="navbar-item"
+        to="/about"
+      >
+        ABOUT
+      </NavLink>
+      <NavLink
         className="navbar-item"
         to="/jokes"
       >

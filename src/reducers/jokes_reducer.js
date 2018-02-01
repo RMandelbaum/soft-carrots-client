@@ -6,6 +6,14 @@ export default (state = [], action) => {
     case 'GET_JOKES_SUCCESS':
         return action.jokes;
 
+    case 'ADD_NEW_JOKE':
+        console.log(action.joke)
+        debugger
+      return [...state.concat(action.joke)]
+        debugger
+
+
+
     case 'REMOVE_JOKE':
         return state.filter(joke => joke.id !== action.joke.id)
 
@@ -25,7 +33,7 @@ export default (state = [], action) => {
         else{
           return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating = 0}), ...state.slice(idx + 1)]
         }
-    break
+        //break
     default:
         return state;
 }

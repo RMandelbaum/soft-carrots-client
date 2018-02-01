@@ -24,11 +24,17 @@ class Random extends Component {
   render() {
     const shuffledJokes = shuffleArray(this.props.jokes);
 
+
     return (
       <ul>
         {shuffledJokes.map((joke, idx) => {
           return (
-            <JokeCard key={idx} joke={joke} />
+            <JokeCard
+              key={joke.id}
+              joke={joke}
+              upvoteJoke={upvoteJoke}
+              downvoteJoke={downvoteJoke}
+            />
           );
         })}
       </ul>
@@ -40,4 +46,5 @@ const mapStateToProps = (state) => {
     jokes: state.jokes
   })
 }
+
 export default connect(mapStateToProps, {getJokes, upvoteJoke, downvoteJoke})(Random);

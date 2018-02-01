@@ -7,14 +7,14 @@ import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
 
-  componentDidMount(){
-    this.props.getJokes()
-
-  }
-debugger
+  // componentDidMount(){
+  //   console.log('getting jokes')
+  //   this.props.getJokes()
+  //
+  // }
   render(){
       const { jokes, upvoteJoke, downvoteJoke } = this.props;
-        debugger
+
          return(
            <div className="JokesContainer">
              {jokes.map(joke => <JokeCard key={joke.id}
@@ -36,4 +36,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, { getJokes, upvoteJoke, downvoteJoke })(Jokes);
+export default connect(null, { getJokes, upvoteJoke, downvoteJoke })(Jokes);
