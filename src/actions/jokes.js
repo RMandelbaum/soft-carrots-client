@@ -45,10 +45,10 @@ export const createJoke = (joke, routerHistory) => {
         dispatch(resetJokeForm())
         routerHistory.replace(`/jokes`)
       })
-      // .catch(error => {
-      //   dispatch({type: 'ERROR'})
-      //   routerHistory.replace(`/jokes/new`)
-      //  })
+      .catch(error => {
+        dispatch({type: 'ERROR'})
+        routerHistory.replace(`/jokes/new`)
+       })
     }
   }
 
@@ -58,17 +58,3 @@ export const createJoke = (joke, routerHistory) => {
     }
     return response;
   }
-
-  export const upvoteJoke = (jokeId) => {
-    return {
-      type: 'UPVOTE_JOKE',
-      jokeId
-    }
-  }
-
-  export const downvoteJoke = (jokeId) => {
-    return {
-      type: 'DOWNVOTE_JOKE',
-      jokeId
-     }
-   }
