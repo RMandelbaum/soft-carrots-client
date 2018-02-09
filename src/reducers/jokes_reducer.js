@@ -30,11 +30,17 @@ export default (state = [], action) => {
         }
 
       case 'SAVE_RATING':
+      debugger
         idx = state.findIndex(joke => joke.id === action.jokeId);
         joke = state[idx];
-        return 9
+        let newRating = joke.rating + 1
         debugger
+        return [...state.slice(0,idx, Object.assign({},joke, {rating: newRating}))]
+        debugger
+        //return state.map(joke => (joke.id === action.jokeId) ? {...joke, rating: joke.rating+1} : joke);
 
+
+        debugger
     default:
         return state;
 }

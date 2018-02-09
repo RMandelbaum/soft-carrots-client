@@ -1,26 +1,29 @@
 const JOKES_API = process.env.REACT_APP_API_URL;
 
 export const upvoteJoke = (joke, jokeId, rating) => {
-
+  debugger
   return dispatch => {
-   return fetch(`${JOKES_API}/jokes`, {
-           method: "POST",
+   return fetch(`${JOKES_API}/jokes/${jokeId}`, {
+           method: "PATCH",
            headers: {
              'Content-Type': 'application/json'
            },
-           body: JSON.stringify({joke: joke})
+           body: JSON.stringify({rating: rating})
          })
          .then(response => response.json())
-         .then( joke => {
+         .then(rating, joke, jokeId => {
            dispatch( {
              type: 'SAVE_RATING',
-             jokeId: jokeId,
-             rating: rating
+             rating: rating,
+             joke: joke,
+             jokeId: jokeId
            })
          })
-         .then(jokeId => {
+         .then((joke,rating) => {
            dispatch( {type: 'UPVOTE_JOKE',
-                     jokeId
+                      joke: joke,
+                      jokeId: jokeId,
+                      rating: rating
                      })
       })
  }

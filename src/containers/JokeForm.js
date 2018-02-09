@@ -5,7 +5,6 @@ import { updateJokeFormData } from '../actions/jokesForm';
 import { createJoke } from '../actions/jokes';
 import FormError from '../components/FormError';
 
-
 class JokeForm extends Component {
 
     handleOnChange = event => {
