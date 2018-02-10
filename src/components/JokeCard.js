@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/Jokes.css';
 
-const JokeCard = ({joke, upvoteJoke, downvoteJoke }) =>(
+const JokeCard = ({joke, updateJoke }) =>(
 
 
 
@@ -15,12 +15,12 @@ const JokeCard = ({joke, upvoteJoke, downvoteJoke }) =>(
 
           <img className="UpVote"
             src="https://cdn3.iconfinder.com/data/icons/basicolor-votting-awards/24/210_vote_like_up_upvote-512.png"
-            onClick={() => upvoteJoke(joke, joke.id, joke.rating)}
+            onClick={() => updateJoke(joke.id, joke.rating + 1, "upvote")}
             alt="upvote"
            />
           <img className="DownVote"
               src="https://cdn3.iconfinder.com/data/icons/minicons-for-web-sites/24/minicons-90-128.png"
-              onClick={() => downvoteJoke(joke.id)}
+              onClick={() => updateJoke(joke.id, joke.rating - 1, "downvote")}
 
               alt="downvote"
             />

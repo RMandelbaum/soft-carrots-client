@@ -13,6 +13,7 @@ export default (state = [], action) => {
         return state.filter(joke => joke.id !== action.joke.id)
 
     case 'UPVOTE_JOKE':
+        debugger
         idx = state.findIndex(joke => joke.id === action.jokeId);
         joke = state[idx];
         debugger
@@ -30,17 +31,17 @@ export default (state = [], action) => {
         }
 
       case 'SAVE_RATING':
-      debugger
+        debugger
         idx = state.findIndex(joke => joke.id === action.jokeId);
         joke = state[idx];
         let newRating = joke.rating + 1
         debugger
         return [...state.slice(0,idx, Object.assign({},joke, {rating: newRating}))]
-        debugger
+
         //return state.map(joke => (joke.id === action.jokeId) ? {...joke, rating: joke.rating+1} : joke);
 
 
-        debugger
+
     default:
         return state;
 }

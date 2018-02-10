@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getJokes } from '../actions/jokes';
-import { upvoteJoke, downvoteJoke  } from '../actions/votes';
+import { upvoteJoke, downvoteJoke, updateJoke  } from '../actions/votes';
 import { connect } from 'react-redux';
 import JokeCard from './JokeCard';
 

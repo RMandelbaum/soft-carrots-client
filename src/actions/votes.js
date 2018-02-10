@@ -1,6 +1,6 @@
 const JOKES_API = process.env.REACT_APP_API_URL;
 
-export const upvoteJoke = (joke, jokeId, rating) => {
+export const updateJoke = (jokeId, rating, state) => {
   debugger
   return dispatch => {
    return fetch(`${JOKES_API}/jokes/${jokeId}`, {
@@ -11,24 +11,40 @@ export const upvoteJoke = (joke, jokeId, rating) => {
            body: JSON.stringify({rating: rating})
          })
          .then(response => response.json())
-         .then(rating, joke, jokeId => {
+         .then((joke) => {
+
            dispatch( {
              type: 'SAVE_RATING',
-             rating: rating,
-             joke: joke,
-             jokeId: jokeId
+             jokeId: joke.id
+             //joke: joke
            })
          })
-         .then((joke,rating) => {
-           dispatch( {type: 'UPVOTE_JOKE',
-                      joke: joke,
-                      jokeId: jokeId,
-                      rating: rating
-                     })
-      })
+         //.then(handleVote(state, jokeId))
+
+      //    .then(joke) => {
+      //      dispatch( {type: 'UPVOTE_JOKE',
+      //                 jokeId: jokeId
+      //
+      //                })
+      // })
  }
  }
 
+const handleVote = (state, jokeId) => {
+  if (state === "upvote"){
+    upvoteJoke(jokeId)
+  }else {
+    downvoteJoke(jokeId)
+  }
+
+}
+
+export const upvoteJoke = (jokeId) => {
+  return {
+    type: 'UPVOTE_JOKE',
+    jokeId
+   }
+ }
 
 export const downvoteJoke = (jokeId) => {
   return {
