@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import JokeCard from '../components/JokeCard';
 import { getJokes } from '../actions/jokes';
-import { upvoteJoke, downvoteJoke, updateJoke  } from '../actions/votes';
+import {saveVote  } from '../actions/votes';
 import '../styles/Jokes.css';
 import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
 
   render(){
-      const { jokes, upvoteJoke, downvoteJoke, updateJoke } = this.props;
+      const { jokes, saveVote } = this.props;
 
          return(
            <div className="JokesContainer">
              {jokes.map(joke => <JokeCard key={joke.id}
-                  upvoteJoke={upvoteJoke}
-                  downvoteJoke={downvoteJoke}
-                  updateJoke={updateJoke}
+                  // upvoteJoke={upvoteJoke}
+                  // downvoteJoke={downvoteJoke}
+                  saveVote={saveVote}
                   joke={joke} />)}
             <Pagination />
         </div>
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(null, { getJokes, upvoteJoke, downvoteJoke, updateJoke })(Jokes);
+export default connect(null, { getJokes, saveVote })(Jokes);

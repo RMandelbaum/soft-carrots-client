@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getJokes } from '../actions/jokes';
-import { upvoteJoke, downvoteJoke, updateJoke  } from '../actions/votes';
+import { saveVote  } from '../actions/votes';
 import { connect } from 'react-redux';
 import JokeCard from './JokeCard';
 
@@ -33,8 +33,9 @@ class Random extends Component {
             <JokeCard
               key={joke.id}
               joke={joke}
-              upvoteJoke={upvoteJoke}
-              downvoteJoke={downvoteJoke}
+              saveVote={saveVote}
+              // upvoteJoke={upvoteJoke}
+              // downvoteJoke={downvoteJoke}
             />
           );
         })}
@@ -48,4 +49,4 @@ const mapStateToProps = (state) => {
   })
 }
 
-export default connect(mapStateToProps, {getJokes, upvoteJoke, downvoteJoke})(Random);
+export default connect(mapStateToProps, {getJokes, saveVote})(Random);
