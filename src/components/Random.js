@@ -34,8 +34,7 @@ class Random extends Component {
               key={joke.id}
               joke={joke}
               saveVote={saveVote}
-              // upvoteJoke={upvoteJoke}
-              // downvoteJoke={downvoteJoke}
+            
             />
           );
         })}

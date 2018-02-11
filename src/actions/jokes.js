@@ -27,6 +27,7 @@ export const removeJoke = joke => {
 }
 
 export const createJoke = (joke, routerHistory) => {
+  debugger
     return dispatch => {
       return fetch(`${JOKES_API}/jokes`, {
         method: "POST",

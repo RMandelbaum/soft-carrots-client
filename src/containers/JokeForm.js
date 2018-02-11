@@ -19,6 +19,7 @@ class JokeForm extends Component {
         event.preventDefault();
         const { createJoke, jokeFormData, history} = this.props;
             createJoke(jokeFormData, history);
+            debugger
       }
 
     render(){

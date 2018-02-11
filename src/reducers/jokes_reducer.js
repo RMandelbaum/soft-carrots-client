@@ -13,36 +13,31 @@ export default (state = [], action) => {
         return state.filter(joke => joke.id !== action.joke.id)
 
     case 'UPVOTE_JOKE':
-        debugger
         idx = state.findIndex(joke => joke.id === action.jokeId);
         joke = state[idx];
-        debugger
         return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating += 1}), ...state.slice(idx + 1)]
 
+    case 'DOWNVOTE_JOKE':
+      idx = state.findIndex(joke => joke.id === action.jokeId);
+      joke = state[idx];
 
-      case 'DOWNVOTE_JOKE':
-        idx = state.findIndex(joke => joke.id === action.jokeId);
-        joke = state[idx];
-
-        if (joke.rating > 0)
+      if (joke.rating > 0)
         return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating -= 1}), ...state.slice(idx + 1)]
-        else{
-          return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating = 0}), ...state.slice(idx + 1)]
-        }
+      else{
+        return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating = 0}), ...state.slice(idx + 1)]
+      }
 
-      case 'SAVE_RATING':
-        debugger
-        idx = state.findIndex(joke => joke.id === action.jokeId);
-        joke = state[idx];
-        let newRating = joke.rating + 1
-        debugger
-        return [...state.slice(0,idx, Object.assign({},joke, {rating: newRating}))]
+    case 'SAVE_RATING':
+      idx = state.findIndex(joke => joke.id === action.joke.id);
+      joke = state[idx];
 
-        //return state.map(joke => (joke.id === action.jokeId) ? {...joke, rating: joke.rating+1} : joke);
+      if (joke.rating > 0){
+        return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: action.joke.rating} : joke);
+      } else {
+        return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: 0} : joke);
+      }
 
-
-
-    default:
-        return state;
-}
+  default:
+      return state;
+    }
 }

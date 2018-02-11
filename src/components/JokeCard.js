@@ -18,12 +18,13 @@ const JokeCard = ({joke, saveVote }) =>(
             onClick={() => saveVote(joke.id, joke.rating + 1, "upvote")}
             alt="upvote"
            />
-          <img className="DownVote"
-              src="https://cdn3.iconfinder.com/data/icons/minicons-for-web-sites/24/minicons-90-128.png"
-              onClick={() => saveVote(joke.id, joke.rating - 1, "downvote")}
 
+            <img className="DownVote"
+              src="https://cdn3.iconfinder.com/data/icons/minicons-for-web-sites/24/minicons-90-128.png"
+              onClick={() =>  saveVote(joke.id, joke.rating - 1, "downvote")}
               alt="downvote"
             />
+
           <h3>Votes: {joke.rating}</h3>
 
         </div>

@@ -8,28 +8,32 @@ import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
 
+
   render(){
-      const { jokes, saveVote } = this.props;
+      const { jokes, saveVote} = this.props;
 
          return(
            <div className="JokesContainer">
-             {jokes.map(joke => <JokeCard key={joke.id}
-                  // upvoteJoke={upvoteJoke}
-                  // downvoteJoke={downvoteJoke}
-                  saveVote={saveVote}
-                  joke={joke} />)}
+             {jokes.map(joke =>
+               <JokeCard key={joke.id}
+                         saveVote={saveVote}
+                         joke={joke}
+                          />)}
             <Pagination />
         </div>
-
-
     )
+
   }
+
+
 }
 
-const mapStateToProps = (state) => {
-  return({
-    jokes: state.jokes
-  })
-}
+
+// 
+// const mapStateToProps = (state) => {
+//   return({
+//     jokes: state.jokes
+//   })
+// }
 
 export default connect(null, { getJokes, saveVote })(Jokes);
