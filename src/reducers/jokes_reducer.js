@@ -1,6 +1,19 @@
+
+function shuffleArray(jokeArray){
+  let i = jokeArray.length - 1;
+  for (; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = jokeArray[i];
+    jokeArray[i] = jokeArray[j];
+    jokeArray[j] = temp;
+   }
+   return jokeArray;
+ }
+
 export default (state = [], action) => {
   let idx;
   let joke;
+
 
   switch(action.type){
     case 'GET_JOKES_SUCCESS':
@@ -36,6 +49,8 @@ export default (state = [], action) => {
       } else {
         return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: 0} : joke);
       }
+    case 'RANDOM_JOKE':
+      return shuffleArray(action.jokes)
 
   default:
       return state;

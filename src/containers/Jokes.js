@@ -7,7 +7,9 @@ import '../styles/Jokes.css';
 import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
-
+  componentDidMount(){
+    this.props.getJokes()
+  }
 
   render(){
       const { jokes, saveVote} = this.props;
@@ -29,11 +31,11 @@ class Jokes extends Component{
 }
 
 
-// 
-// const mapStateToProps = (state) => {
-//   return({
-//     jokes: state.jokes
-//   })
-// }
 
-export default connect(null, { getJokes, saveVote })(Jokes);
+const mapStateToProps = (state) => {
+  return({
+    jokes: state.jokes
+  })
+}
+
+export default connect(mapStateToProps, { getJokes, saveVote })(Jokes);

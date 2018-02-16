@@ -13,9 +13,9 @@ import '../styles/App.css';
 
 class App extends Component {
 
-  componentDidMount(){
-    this.props.getJokes()
-  }
+  // componentDidMount(){
+  //   this.props.getJokes()
+  // }
 
 
   render() {
@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path = '/' component = {Home} />
             <Route exact path = '/about' component = {About} />
             <Route exact path = '/random' component = {Random} />
-            <Route exact path = '/jokes' render = {() => (<Jokes jokes={this.props.jokes} />)} />
+            <Route exact path = '/jokes' component = {Jokes} />
             <Route exact path = '/jokes/new' component = {JokeForm} />
            </Switch>
         </div>

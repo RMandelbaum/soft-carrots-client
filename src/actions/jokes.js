@@ -59,3 +59,20 @@ export const createJoke = (joke, routerHistory) => {
     }
     return response;
   }
+
+  export const getJokesRandom = () => {
+      return dispatch => {
+          return fetch(`${JOKES_API}/jokes`)
+
+          .then(response => response.json())
+          .then(jokes => dispatch(randomizeJokes(jokes)))
+          .catch(error => console.log(error))
+      }
+  }
+  
+  export const randomizeJokes = (jokes) =>{
+    return{
+      type: 'RANDOM_JOKE',
+      jokes
+    }
+}
