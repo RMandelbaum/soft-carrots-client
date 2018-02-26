@@ -49,6 +49,7 @@ export default (state = [], action) => {
       } else {
         return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: 0} : joke);
       }
+
     case 'RANDOM_JOKE':
       return shuffleArray(action.jokes)
 

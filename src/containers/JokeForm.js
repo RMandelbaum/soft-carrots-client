@@ -30,7 +30,7 @@ class JokeForm extends Component {
                 <h3 className="FormHeader">Joke Form</h3>
                 {this.props.errors === true ? <FormError />: null}
                 <hr />
-                <form className="PageContent" onSubmit={this.handleOnSubmit}>
+                <form className="PageContent-Form" onSubmit={this.handleOnSubmit}>
                     <div>
                         <label htmlFor="description">Joke Entry: </label>
                         <br />

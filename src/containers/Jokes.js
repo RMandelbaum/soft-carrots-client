@@ -4,7 +4,6 @@ import JokeCard from '../components/JokeCard';
 import { getJokes } from '../actions/jokes';
 import {saveVote  } from '../actions/votes';
 import '../styles/Jokes.css';
-import Pagination from '../components/Pagination';
 
 class Jokes extends Component{
   componentDidMount(){
@@ -21,7 +20,6 @@ class Jokes extends Component{
                          saveVote={saveVote}
                          joke={joke}
                           />)}
-            <Pagination />
         </div>
     )
 

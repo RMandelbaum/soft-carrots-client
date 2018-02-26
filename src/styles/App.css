@@ -42,12 +42,21 @@
 }
 
 
-.PageContent{
+.PageContent-Form{
   background-color: #fffafa;
-  width: 50%;
   margin: auto;
   text-align: center;
-  padding-left: 15px;
+  width: 75%;
+  padding: 15px;
+  border: solid 3px;
+  border-color: orange;
+ }
+.PageContent{
+  background-color: #fffafa;
+  margin: auto;
+  text-align: center;
+  width: 75%;
+  padding: 15px;
  }
 
 
@@ -58,4 +67,5 @@
 
  .fieldRequired {
    color: red;
+   text-align: center;
  }

@@ -13,7 +13,7 @@
   text-transform: uppercase;
   white-space: nowrap;
   text-transform: full-width;
-  font-size: 7vw;
+  font-size: 6vw;
   z-index: 1000;
   font-family: 'Bangers', cursive;
   text-shadow: 8px 2px 0  rgb(0, 140, 91);
@@ -48,7 +48,6 @@
   -ms-animation:wiggle .3s 2;-moz-animation:wiggle .3s 2;-webkit-animation:wiggle .3s 2;animation:wiggle .3s 2;}
 
 .navbar-container {
-  margin: auto;
   display: flex;
   list-style-type: none;
   background-color: white;
