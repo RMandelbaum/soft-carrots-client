@@ -15,7 +15,9 @@ export const getJokes = () => {
 
         .then(response => response.json())
         .then(jokes => dispatch(setJokes(jokes)))
+        .then(jokes => console.log(jokes))
         .catch(error => console.log(error))
+
     }
 }
 
@@ -69,7 +71,7 @@ export const createJoke = (joke, routerHistory) => {
           .catch(error => console.log(error))
       }
   }
-  
+
   export const randomizeJokes = (jokes) =>{
     return{
       type: 'RANDOM_JOKE',

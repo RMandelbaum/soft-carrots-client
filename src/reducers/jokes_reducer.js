@@ -34,21 +34,13 @@ export default (state = [], action) => {
       idx = state.findIndex(joke => joke.id === action.jokeId);
       joke = state[idx];
 
-      if (joke.rating > 0)
-        return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating -= 1}), ...state.slice(idx + 1)]
-      else{
-        return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating = 0}), ...state.slice(idx + 1)]
-      }
+      return [...state.slice(0,idx),Object.assign({}, joke, { rating: joke.rating -= 1}), ...state.slice(idx + 1)]
 
     case 'SAVE_RATING':
       idx = state.findIndex(joke => joke.id === action.joke.id);
       joke = state[idx];
 
-      if (joke.rating > 0){
-        return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: action.joke.rating} : joke);
-      } else {
-        return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: 0} : joke);
-      }
+      return state.map(joke => (joke.id === action.joke.id) ? {...joke, rating: action.joke.rating} : joke);
 
     case 'RANDOM_JOKE':
       return shuffleArray(action.jokes)
